@@ -15,5 +15,28 @@ db.connect((err) => {
     console.log(`\n`);
     console.log('\x1b[33m Connected to the Employee Database! \x1b[0m');
     console.log(`\n`);
-    employeePrompt();
+    prompt();
 });
+
+const prompt = () => {
+    inquirer.prompt([{
+        type: "list",
+        name: "user",
+        message: "Pick what you would like to do below",
+        choices: [
+            "View Departments",
+            "View Employees",
+            "View Roles",
+            "Add Department",
+            "Add Employee",
+            "Add Role",
+            "Exit"
+
+        ]
+
+    }
+
+])
+    .then((response)) 
+    
+};
